@@ -1,0 +1,122 @@
+---
+layout: default
+title: 首页
+---
+
+# 🎯 OpenClaw 中文安装指南
+
+> 让 AI 助手连接你的聊天应用 — **10 分钟快速上手**
+
+---
+
+## ✨ OpenClaw 是什么？
+
+OpenClaw 是一个**自托管网关**，将 WhatsApp、Telegram、Discord、iMessage 等聊天应用连接到 AI 助手（如 Claude、ChatGPT）。
+
+### 核心特点
+
+| 特点 | 说明 |
+|------|------|
+| 🔌 **多渠道支持** | 一个 Gateway 服务多个平台 |
+| 🤖 **Agent 原生** | 支持工具调用、会话管理、多 Agent 路由 |
+| 🔒 **自托管** | 数据完全掌控在自己手中 |
+| 🆓 **开源免费** | MIT 许可证，社区驱动 |
+
+---
+
+## 🚀 5 分钟快速安装
+
+### Windows (PowerShell)
+```powershell
+iwr -useb https://openclaw.ai/install.ps1 | iex
+```
+
+### macOS / Linux
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+### 首次设置
+```bash
+# 运行引导向导
+openclaw onboard --install-daemon
+
+# 检查状态
+openclaw gateway status
+
+# 打开控制面板
+openclaw dashboard
+```
+
+---
+
+## 📖 完整文档
+
+| 章节 | 说明 |
+|------|------|
+| [🚀 快速开始](./docs/quick-start.html) | 各平台详细安装步骤 |
+| [📱 渠道配置](./docs/channels/) | WhatsApp、Telegram、Discord 配置 |
+| [⚙️ 进阶功能](./docs/advanced/) | 多 Agent、Skills、定时任务等 |
+| [🔧 故障排查](./docs/troubleshooting.html) | 常见问题解答 |
+
+---
+
+## 🌟 选择你的安装方式
+
+| 方式 | 适合人群 | 难度 |
+|------|----------|------|
+| [快速安装](./docs/quick-start.html#快速安装) | 新手推荐 | ⭐ |
+| [NPM 安装](./docs/quick-start.html#npm-安装) | 开发者 | ⭐⭐ |
+| [Docker 部署](./docs/quick-start.html#docker-部署) | 运维人员 | ⭐⭐⭐ |
+
+---
+
+## 📸 功能预览
+
+### 多渠道支持
+连接 WhatsApp、Telegram、Discord、iMessage 等多个平台。
+
+### Skills 技能系统
+通过 [ClawHub](https://clawhub.com) 安装各种技能，扩展 AI 能力。
+
+### 多 Agent 路由
+为工作和个人使用配置不同的 Agent，隔离会话历史。
+
+### 移动端 Nodes
+连接 iOS/Android 设备，让 AI 能够拍照、获取位置、发送通知。
+
+---
+
+## 🔗 资源链接
+
+| 资源 | 链接 |
+|------|------|
+| 📚 官方文档 | https://docs.openclaw.ai/ |
+| 🐙 GitHub | https://github.com/openclaw/openclaw |
+| 🛒 技能市场 | https://clawhub.com |
+| 💬 社区 Discord | https://discord.com/invite/clawd |
+| 🐛 问题反馈 | https://github.com/openclaw/openclaw/issues |
+
+---
+
+## 🤝 贡献指南
+
+欢迎贡献！你可以：
+
+1. **报告问题** - 在 [GitHub Issues](https://github.com/chentao4183/openclaw-guide-cn/issues) 提交问题
+2. **改进文档** - 提交 Pull Request
+3. **分享经验** - 在社区分享你的使用心得
+
+---
+
+## 📄 许可证
+
+本项目基于 MIT 许可证开源。
+
+---
+
+<div class="tip">
+  <strong>💡 提示：</strong> 开始之前，确保你的系统已安装 Node.js 22+
+</div>
+
+**开始你的 OpenClaw 之旅** → [快速开始](./docs/quick-start.html)
