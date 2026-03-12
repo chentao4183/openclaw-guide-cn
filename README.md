@@ -2,6 +2,12 @@
 
 > **真正能做事的 AI 助手** — 清理收件箱、发送邮件、管理日历，连接企业微信、飞书、钉钉与微信生态
 
+<div align="center">
+
+**📖 [在线文档](https://chentao4183.github.io/openclaw-guide-cn/)** | **🚀 [快速开始](docs/quick-start.md)** | **💬 [加入社区](docs/community.md)**
+
+</div>
+
 ![OpenClaw](https://img.shields.io/badge/OpenClaw-自托管网关-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Platform](https://img.shields.io/badge/企业微信%20%7C%20飞书%20%7C%20钉钉%20%7C%20微信-支持-brightgreen)
