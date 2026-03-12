@@ -2,31 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>OpenClaw - 让 AI 真正为你工作 | 企业微信/飞书/钉钉机器人</title>
+  <title>OpenClaw 中文安装指南</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="真正能做事的 AI 助手 — 清理收件箱、发送邮件、管理日历。支持企业微信、飞书、钉钉与微信生态对话接入。10 分钟快速部署，开源自托管。">
-  <meta name="keywords" content="OpenClaw,AI 助手,企业微信机器人,飞书机器人,钉钉机器人,Telegram 机器人,WhatsApp 机器人,自托管网关,智能客服,自动化助手">
-  <meta name="author" content="OpenClaw Community">
+  <meta name="description" content="让 AI 助手连接你的聊天应用 — 10 分钟快速上手">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-
-  <!-- Open Graph / 社交媒体 -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="OpenClaw - 让 AI 真正为你工作">
-  <meta property="og:description" content="真正能做事的 AI 助手，支持企业微信、飞书、钉钉、Telegram、WhatsApp。10 分钟快速部署。">
-  <meta property="og:url" content="https://openclaw-guide-cn.vercel.app">
-  <meta property="og:image" content="https://openclaw.ai/logo.png">
-  <meta property="og:site_name" content="OpenClaw 中文指南">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OpenClaw - 让 AI 真正为你工作">
-  <meta name="twitter:description" content="真正能做事的 AI 助手，支持企业微信、飞书、钉钉。10 分钟快速部署。">
-  <meta name="twitter:image" content="https://openclaw.ai/logo.png">
-
-  <!-- 其他 SEO -->
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
-  <link rel="canonical" href="https://openclaw-guide-cn.vercel.app">
   
   <!-- Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw 快速部署指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+        }
+        .step-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .step-btn {
+            padding: 15px 30px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        .step-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        .step-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0,0.1);
+        }
+        .step {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .step.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #667eea;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        .code-block {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .command {
+            background: #2d2d2d;
+            color: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #856404;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #856000;
+        }
+        .next-steps {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9f9;
+            border-radius: 10px;
+        }
+        .next-steps h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 OpenClaw 快速部署指南</h1>
+            <p class="subtitle">5分钟内让AI助手在你的聊天应用中运行</p>
+        </div>
+
+        <div class="step-selector">
+            <button class="step-btn active" onclick="showStep(1)">🚀 极速体验</button>
+            <button class="step-btn" onclick="showStep(2)">⚡ 标准部署</button>
+            <button class="step-btn" onclick="showStep(3)">🐳 容器部署</button>
+            <button class="step-btn" onclick="showStep(4)">❓ 问题排查</button>
+        </div>
+
+        <div class="content">
+            <!-- Step 1: 极速体验 -->
+            <div id="step1" class="step active">
+                <h2>适合人群</h2>
+                <p>想快速尝鲜，不确定是否长期使用</p>
+                
+                <h2>步骤</h2>
+                <div class="code-block">
+                    <span class="command"># 1. 安装OpenClaw CLI</span>
+                    <pre># Linux/macOS
+curl -fsSL https://openclaw.ai/install.sh | bash
+
+# Windows (PowerShell)
+iwr -useb https://openclaw.ai/install.ps1 | iex</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 2. 运行新手向导</span>
+                    <pre>openclaw onboard</pre>
+                </div>
+
+                <div class="note">
+                    <strong>💡 揙strong> 选择"快速开始"模式，使用默认配置
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 3. 验证安装</span>
+                    <pre>openclaw status
+openclaw health</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 4. 打开Dashboard</span>
+                    <pre>openclaw dashboard</pre>
+                </div>
+
+                <div class="note">
+                    <strong>✅ 完成!</strong> 浏览器会自动打开 <a href="http://127.0.0.1:18789" target="_blank">http://127.0.0.1:18789</a>
+                </div>
+            </div>
+
+            <!-- Step 2: 标准部署 -->
+            <div id="step2" class="step">
+                <h2>适合人群</h2>
+                <p>部署到服务器、长期使用、需要稳定服务</p>
+                
+                <h2>步骤</h2>
+                <div class="code-block">
+                    <span class="command"># 1. 安装OpenClaw CLI</span>
+                    <pre># Linux/macOS
+curl -fsSL https://openclaw.ai/install.sh | bash
+
+# Windows (PowerShell)
+iwr -useb https://openclaw.ai/install.ps1 | iex</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 2. 运行新手向导（高级模式）</span>
+                    <pre>openclaw onboard</pre>
+                </div>
+
+                <div class="note">
+                    <strong>⚙️ 配置选项:</strong>
+                    <ul>
+                        <li>认证方式: API密钥或OAuth</li>
+                        <li>Gateway端口: 默认18789</可>
+                        <li>渠道: Telegram/WhatsApp/Discord</li>
+                        <li>守护进程: systemd/launchd</li>
+                    </ul>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 3. 启动服务</span>
+                    <pre>openclaw gateway start</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 4. 验证</span>
+                    <pre>openclaw status
+openclaw health</pre>
+                </div>
+            </div>
+
+            <!-- Step 3: 容器部署 -->
+            <div id="step3" class="step">
+                <h2>适合人群</h2>
+                <p>熟悉Docker的用户、需要隔离环境</p>
+                
+                <h2>步骤</h2>
+                <div class="code-block">
+                    <span class="command"># 1. 拉取OpenClaw镜像</span>
+                    <pre>docker pull openclaw/openclaw:latest</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 2. 运行容器</span>
+                    <pre>docker run -d \
+  --name openclaw \
+  -p 18789:18789 \
+  -v ~/.openclaw:/root/.openclaw \
+  openclaw/openclaw:latest</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 3. 进入容器配置</span>
+                    <pre>docker exec -it openclaw openclaw onboard</pre>
+                </div>
+
+                <div class="code-block">
+                    <span class="command"># 4. 访问Dashboard</span>
+                    <pre># 浏览器访问 http://localhost:18789</pre>
+                </div>
+            </div>
+
+            <!-- Step 4: 问题排查 -->
+            <div id="step4" class="step">
+                <h2>❓ 找不到openclaw命令?</h2>
+                <div class="warning">
+                    <strong>原因:</strong> PATH未包含npm全局bin目录
+                </div>
+                <div class="code-block">
+                    <span class="command">解决方案:</span>
+                    <pre># 检查npm全局路径
+npm prefix -g
+echo $PATH
+
+# 添加到PATH (macOS/Linux)
+echo 'export PATH="$(npm prefix -g)/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc</pre>
+                </div>
+
+                <h2>❓ Gateway启动失败?</h2>
+                <div class="warning">
+                    <strong>症状:</strong> `openclaw gateway`报错"port already in use"
+                </div>
+                <div class="code-block">
+                    <span class="command">解决方案:</span>
+                    <pre># 查找占用进程
+lsof -i :18789  # macOS/Linux
+netstat -ano | findstr : :18789  # Windows
+
+netstat -ano | findstr : :18789
+
+# 停止占用进程或更换端口
+kill -9 <PID>
+# 或者
+openclaw gateway --port 18790</pre>
+                </div>
+
+                <h2>❓ WhatsApp无法登录?</h2>
+                <div class="warning">
+                    <strong>症状:</strong> `openclaw channels login`失败
+                </div>
+                <div class="code-block">
+                    <span class="command">解决方案:</span>
+                    <pre>1. 检查网络连接
+2. 重新运行登录命令
+3. 使用备用手机号码
+4. 检查防火墙设置</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h3>📚 下一步</h3>
+            <ul>
+                <li>📖 <a href="https://docs.openclaw.ai" target="_blank">阅读完整文档</a></li>
+                <li>💬 <a href="https://discord.gg/clawd" target="_blank">加入社区讨论</a></li>
+                <li>🛠️ <a href="https://clawhub.com" target="_blank">发现更多Skills</a></li>
+                <li>⭐ <a href="https://github.com/openclaw/openclaw" target="_blank">在GitHub上标星</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showStep(stepNumber) {
+            // 隐藏所有步骤
+            document.querySelectorAll('.step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.querySelectorAll('.step-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 显示选中的步骤
+            document.getElementById('step' + stepNumber).classList.add('active');
+            document.querySelectorAll('.step-btn')[stepNumber - 1].classList.add('active');
+        }
+    </script>
+</body>
+</html>
