@@ -293,15 +293,16 @@
       color: var(--primary-700);
     }
     
-    /* 代码块美化 */
+    /* 代码块美化 - 高对比度 */
     .markdown-section pre {
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      background: #0d1117 !important;
       border-radius: 12px;
       padding: 20px;
       margin: 20px 0;
       box-shadow: var(--shadow-lg);
       position: relative;
       overflow: hidden;
+      border: 1px solid #30363d;
     }
     
     .markdown-section pre::before {
@@ -315,19 +316,28 @@
     }
     
     .markdown-section pre code {
-      color: #e2e8f0;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      color: #f0f6fc !important;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.7;
+      background: transparent !important;
+      padding: 0 !important;
     }
     
+    /* 行内代码 - 高对比度 */
     .markdown-section code {
-      background: var(--primary-50);
-      color: var(--primary-700);
+      background: #ffeef0 !important;
+      color: #d73a49 !important;
       padding: 3px 8px;
       border-radius: 6px;
       font-size: 0.9em;
-      font-weight: 500;
+      font-weight: 600;
+      border: 1px solid #ffdce0;
+    }
+    
+    /* pre 内的 code 不受行内代码样式影响 */
+    .markdown-section pre code {
+      border: none;
     }
     
     /* 表格美化 */
